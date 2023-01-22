@@ -1,5 +1,4 @@
 version: "3.9"
-
 services:
   app:
     build:
@@ -13,7 +12,7 @@ services:
     command: >
       sh -c "python manage.py runserver 0.0.0.0:8000"
     environment:
-      - DB_HOST:db
+      - DB_HOST=db
       - DB_NAME=devdb
       - DB_USER=devuser
       - DB_PASS=changeme
@@ -28,7 +27,6 @@ services:
       - POSTGRES_DB=devdb
       - POSTGRES_USER=devuser
       - POSTGRES_PASSWORD=changeme
-
 
 volumes:
   dev-db-data:
